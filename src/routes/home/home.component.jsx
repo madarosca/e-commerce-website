@@ -1,4 +1,4 @@
-import Main from '../../components/main/main.component'
+import Main from '../../components/main/main.component';
 
 const Home = () => {
 	const categories = [
@@ -27,9 +27,9 @@ const Home = () => {
 			title: 'Mens',
 			imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
 		},
-	]
+	];
 
-	return <Main categories={categories} />
-}
+	return <Main categories={categories} />;
+};
 
-export default Home
+export default Home;
