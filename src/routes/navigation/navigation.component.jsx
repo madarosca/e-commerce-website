@@ -3,12 +3,14 @@ import './navigation.styles.scss';
 import { Fragment, useContext } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import { UserContext } from '../../contexts/user.context';
+import { signOutUser } from '../../utils/firebase/firebase.utils';
 import { ReactComponent as ShopLogo } from '../../assets/logo.svg';
 
 const Navigation = () => {
 	const { currentUser, setCurrentUser } = useContext(UserContext);
 
-	const handleSignOut = () => {
+	const handleSignOut = async () => {
+		await signOutUser();
 		setCurrentUser(null);
 	};
 
@@ -40,7 +42,9 @@ const Navigation = () => {
 						<Link
 							className='auth'
 							to='/auth'
-						>SIGN IN</Link>
+						>
+							SIGN IN
+						</Link>
 					)}
 				</div>
 			</div>
