@@ -7,12 +7,7 @@ import { signOutUser } from '../../utils/firebase/firebase.utils';
 import { ReactComponent as ShopLogo } from '../../assets/logo.svg';
 
 const Navigation = () => {
-	const { currentUser, setCurrentUser } = useContext(UserContext);
-
-	const handleSignOut = async () => {
-		await signOutUser();
-		setCurrentUser(null);
-	};
+	const { currentUser } = useContext(UserContext);
 
 	return (
 		<Fragment>
@@ -34,7 +29,7 @@ const Navigation = () => {
 						<Link
 							className='auth'
 							to='/'
-							onClick={handleSignOut}
+							onClick={signOutUser}
 						>
 							SIGN OUT
 						</Link>
