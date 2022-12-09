@@ -20,4 +20,11 @@
 			font-size: 16px;
 		}
 	}
+
+	.remove-button {
+		cursor: pointer;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
 }

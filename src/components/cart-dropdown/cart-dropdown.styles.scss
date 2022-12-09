@@ -4,10 +4,10 @@
 	height: 340px;
 	display: flex;
 	flex-direction: column;
-	padding: 20px;
+	padding: 20px 0;
 	border: 1px solid black;
 	background-color: white;
-	top: 90px;
+	top: 96px;
 	right: 40px;
 	z-index: 5;
 
@@ -21,10 +21,22 @@
 		display: flex;
 		flex-direction: column;
 		overflow: scroll;
+		margin-bottom: 5px;
+		padding: 0 20px;
+
+		.cart-empty {
+			text-align: center;
+			display: flex;
+			padding: 20px 0;
+			height: 100%;
+			font-size: 20px;
+			flex-direction: row;
+			align-items: center;
+		}
 	}
 
 	button {
-		margin-top: auto;
 		line-height: 25px;
+		margin: 0 20px;
 	}
 }
