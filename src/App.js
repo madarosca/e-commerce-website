@@ -18,15 +18,15 @@ const App = () => {
 					element={<Home />}
 				/>
 				<Route
-					path='/shop'
+					path='shop/*'
 					element={<Shop />}
 				/>
 				<Route
-					path='/auth'
+					path='auth'
 					element={<Authentication />}
 				/>
 				<Route
-					path='/checkout'
+					path='checkout'
 					element={<Checkout />}
 				/>
 			</Route>
