@@ -1,11 +1,11 @@
 import './main.styles.scss';
-import CategoryItem from '../category-item/category-item.component';
+import MainItem from '../main-item/main-item.component';
 
 const Main = ({ categories }) => {
 	return (
 		<div className='categories-container'>
 			{categories.map((category) => (
-				<CategoryItem
+				<MainItem
 					key={category.id}
 					category={category}
 				/>
