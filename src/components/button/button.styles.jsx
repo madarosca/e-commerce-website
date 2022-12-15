@@ -45,7 +45,3 @@ export const InvertedButton = styled(BaseButton)`
 		border: none;
 	}
 `;
-
-export const CartButton = styled(BaseButton)`
-	margin: 0 20px;
-`;
