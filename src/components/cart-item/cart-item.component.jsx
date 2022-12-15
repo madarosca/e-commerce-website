@@ -1,32 +1,27 @@
 import { useContext } from 'react';
 import { CartContext } from '../../contexts/cart.context';
-import './cart-item.styles.scss';
+import { CartItemContainer, Image, ItemDetails, Name, RemoveButton } from './cart-item.styles.jsx';
 
 const CartItem = ({ cartItem }) => {
 	const { name, imageUrl, quantity, price } = cartItem;
-    const { clearItemFromCart } = useContext(CartContext);
-    
+	const { clearItemFromCart } = useContext(CartContext);
+
 	const clearItemHandler = () => clearItemFromCart(cartItem);
 
 	return (
-		<div className='cart-item-container'>
-			<img
+		<CartItemContainer>
+			<Image
 				src={imageUrl}
 				alt={`${name}`}
 			/>
-			<div className='item-details'>
-				<span className='name'>{name}</span>
-				<span className='price'>
+			<ItemDetails>
+				<Name>{name}</Name>
+				<span>
 					{quantity} x ${price}
 				</span>
-			</div>
-			<div
-				className='remove-button'
-				onClick={clearItemHandler}
-			>
-				x
-			</div>
-		</div>
+			</ItemDetails>
+			<RemoveButton onClick={clearItemHandler}>x</RemoveButton>
+		</CartItemContainer>
 	);
 };
 
