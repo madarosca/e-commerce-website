@@ -18,10 +18,12 @@ const PaymentForm = () => {
 
 	const paymentHandler = async (e) => {
 		e.preventDefault();
+
 		if (!stripe || !elements) {
 			return;
 		}
 		setIsProcessingPayment(true);
+
 		const response = await fetch('/.netlify/functions/create-payment-intent', {
 			method: 'post',
 			headers: {
@@ -38,7 +40,7 @@ const PaymentForm = () => {
 			payment_method: {
 				card: elements.getElement(CardElement),
 				billing_details: {
-					name: currentUser ? currentUser.displayName : 'Yihua Zhang',
+					name: currentUser ? currentUser.displayName : 'Mada Rosca',
 				},
 			},
 		});
