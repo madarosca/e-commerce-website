@@ -6,7 +6,6 @@ import { selectCartTotal } from '../../store/cart/cart.selector';
 import { selectCurrentUser } from '../../store/user/user.selector';
 
 import { BUTTON_TYPE_CLASSES } from '../button/button.component';
-
 import { PaymentButton, PaymentFormContainer } from './payment-form.styles';
 
 const PaymentForm = () => {
@@ -24,7 +23,7 @@ const PaymentForm = () => {
 		}
 		setIsProcessingPayment(true);
 
-		const response = await fetch('/.netlify/functions/create-payment-intent', {
+		const response = await fetch('/netlify/functions/create-payment-intent.js', {
 			method: 'post',
 			headers: {
 				'Content-Type': 'application/json',
@@ -33,6 +32,8 @@ const PaymentForm = () => {
 		}).then((res) => {
 			return res.json();
 		});
+
+		console.log(response.paymentIntent);
 
 		const clientSecret = response.paymentIntent.client_secret;
 
@@ -58,7 +59,7 @@ const PaymentForm = () => {
 
 	return (
 		<PaymentFormContainer>
-			<div onSubmit={paymentHandler}>
+			<form onSubmit={paymentHandler}>
 				<h2>Credit Card Payment:</h2>
 				<CardElement />
 				<PaymentButton
@@ -67,7 +68,7 @@ const PaymentForm = () => {
 				>
 					Pay Now
 				</PaymentButton>
-			</div>
+			</form>
 		</PaymentFormContainer>
 	);
 };
