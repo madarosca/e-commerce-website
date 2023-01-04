@@ -6,7 +6,7 @@ export const CheckoutContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin: 50px auto 0;
+	margin: 50px auto;
 `;
 
 export const CheckoutHeader = styled.div`
