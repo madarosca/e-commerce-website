@@ -27,4 +27,5 @@ package-lock.json
 
 *.cache
 
-.netlify/
+# Local Netlify folder
+.netlify
