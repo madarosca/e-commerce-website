@@ -11,8 +11,8 @@ import {
 import { getFirestore, doc, getDoc, setDoc, collection, writeBatch, query, getDocs } from 'firebase/firestore';
 
 const firebaseConfig = {
-	apiKey: 'AIzaSyBhMspfIy2t0KanIu0C0FbtcGurMI-NULU',
-	authDomain: 'rm-webshop.firebaseapp.com',
+	apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+	authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
 	projectId: 'rm-webshop',
 	storageBucket: 'rm-webshop.appspot.com',
 	messagingSenderId: '700699161796',
