@@ -27,13 +27,17 @@ const PaymentForm = () => {
 			method: 'post',
 			headers: {
 				'Content-Type': 'application/json',
+				'Accept': 'application/json',
 			},
 			body: JSON.stringify({ amount: amount * 100 }),
-		}).then((res) => {
-			return res.json();
-		});
-
-		console.log(response.paymentIntent);
+		})
+			.then((res) => {
+				return res.json();
+			})
+			.catch((error) => {
+				console.log(error);
+				setIsProcessingPayment(false);
+			});
 
 		const clientSecret = response.paymentIntent.client_secret;
 
