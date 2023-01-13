@@ -6,7 +6,7 @@ import CartItem from '../cart-item/cart-item.component';
 
 import { selectIsCartOpen, selectCartItems } from '../../store/cart/cart.selector';
 import { setIsCartOpen } from '../../store/cart/cart.action';
-import { CartDropdownContainer, CartItems, EmptyMessage } from './cart-dropdown.styles.jsx';
+import { CartDropdownContainer, CartItems, EmptyMessage } from './cart-dropdown.styles';
 
 const CartDropdown = () => {
 	const dispatch = useDispatch();

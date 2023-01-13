@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 import { selectCategoriesIsLoading, selectCategoriesMap } from '../../store/categories/categories.selector';
 import ProductCard from '../../components/product-card/product-card.component';
-import { CategoryContainer, CategoryTitle } from './category.styles.jsx';
+import { CategoryContainer, CategoryTitle } from './category.styles';
 import Spinner from '../../components/spinner/spinner.component';
 
 const Category = () => {

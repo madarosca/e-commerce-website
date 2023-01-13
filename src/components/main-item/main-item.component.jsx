@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { MainItemContainer, BackgroundImage, Body } from './main-item.styles.jsx';
+import { MainItemContainer, BackgroundImage, Body } from './main-item.styles';
 
 const MainItem = ({ category }) => {
 	const { title, imageUrl, route } = category;

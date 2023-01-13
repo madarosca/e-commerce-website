@@ -11,7 +11,7 @@ import {
 	Value,
 	Price,
 	RemoveButton,
-} from './checkout-item.styles.jsx';
+} from './checkout-item.styles';
 
 const CheckoutItem = ({ cartItem }) => {
 	const { name, imageUrl, quantity, price } = cartItem;

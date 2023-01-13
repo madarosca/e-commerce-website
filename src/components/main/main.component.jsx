@@ -1,5 +1,5 @@
 import MainItem from '../main-item/main-item.component';
-import { CategoriesContainer } from './main.styles.jsx';
+import { CategoriesContainer } from './main.styles';
 import { categories } from '../../constants/constants.js';
 
 const Main = () => {
