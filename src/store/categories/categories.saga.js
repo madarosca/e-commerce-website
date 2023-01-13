@@ -5,11 +5,11 @@ import { CATEGORIES_ACTION_TYPES } from './categories.types';
 
 export function* fetchCategoriesAsync() {
 	try {
-		const categories = yield call(getCategoriesAndDocuments, 'categories');
+		const categories = yield call(getCategoriesAndDocuments, 'categories')
 
 		yield put(fetchCategoriesSuccess(categories));
 	} catch (error) {
-		yield put(fetchCategoriesFailed(error));
+		yield put(fetchCategoriesFailed(error))
 	}
 }
 
@@ -18,5 +18,5 @@ export function* onFetchCategories() {
 }
 
 export function* categoriesSaga() {
-	yield all([call(onFetchCategories)]);
+	yield all([call(onFetchCategories)])
 }
