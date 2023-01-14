@@ -2,9 +2,9 @@ import { createAction, withMatcher, ActionWithPayload } from '../../utils/reduce
 import { CART_ACTION_TYPES, IsCartOpen, CartItem } from './cart.types';
 import { CategoryItem } from '../categories/categories.types';
 
-export type SetIsCartOpen = ActionWithPayload<CART_ACTION_TYPES.SET_IS_CART_OPEN, IsCartOpen>;
+export type SetIsCartOpen = ActionWithPayload<CART_ACTION_TYPES.SET_IS_CART_OPEN, IsCartOpen>
 
-export type SetCartItems = ActionWithPayload<CART_ACTION_TYPES.SET_CART_ITEMS, CartItem[]>;
+export type SetCartItems = ActionWithPayload<CART_ACTION_TYPES.SET_CART_ITEMS, CartItem[]>
 
 export const setIsCartOpen = withMatcher((boolean: IsCartOpen): SetIsCartOpen => createAction(CART_ACTION_TYPES.SET_IS_CART_OPEN, boolean))
 
