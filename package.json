@@ -10,6 +10,7 @@
 		"@testing-library/react": "^13.4.0",
 		"@testing-library/user-event": "^13.5.0",
 		"@types/redux-logger": "^3.0.9",
+		"@types/styled-components": "^5.1.26",
 		"dotenv": "^16.0.3",
 		"firebase": "^9.14.0",
 		"node-sass": "^8.0.0",
