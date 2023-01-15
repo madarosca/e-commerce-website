@@ -33,7 +33,7 @@ const CartDropdown = () => {
 				)}
 			</CartItems>
 			<Button
-				buttonType={BUTTON_TYPE_CLASSES.cart}
+				buttonType={BUTTON_TYPE_CLASSES.base}
 				onClick={goToCheckoutHandler}
 			>
 				GO TO CHECKOUT
