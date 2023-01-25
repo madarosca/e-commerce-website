@@ -26,7 +26,9 @@ export function* getSnapshotFromUserAuth(userAuth: User, additionalDetails?: Add
 	try {
 		const userSnapshot = yield* call(createUserDocumentFromAuth, userAuth, additionalDetails);
 
-		if (userSnapshot) yield* put(signInSuccess({ id: userSnapshot.id, ...userSnapshot.data() }));
+		if (userSnapshot) {
+			yield* put(signInSuccess({ id: userSnapshot.id, ...userSnapshot.data() }));
+		}
 	} catch (error) {
 		yield* put(signInFailed(error as Error));
 	}
@@ -61,6 +63,7 @@ export function* isUserAuthenticated() {
 		const userAuth = yield* call(getCurrentUser);
 
 		if (!userAuth) return;
+
 		yield* call(getSnapshotFromUserAuth, userAuth);
 	} catch (error) {
 		yield* put(signInFailed(error as Error));

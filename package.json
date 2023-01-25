@@ -18,6 +18,7 @@
 		"react-dom": "^18.2.0",
 		"react-redux": "^8.0.5",
 		"react-router-dom": "^6.4.3",
+		"react-router-redux": "^4.0.8",
 		"react-scripts": "^5.0.1",
 		"redux": "^4.2.0",
 		"redux-logger": "^3.0.6",
@@ -58,6 +59,7 @@
 		]
 	},
 	"devDependencies": {
+		"@types/react-router-redux": "^5.0.21",
 		"babel-plugin-macros": "3.1.0"
 	}
 }
