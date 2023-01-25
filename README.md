@@ -1,6 +1,6 @@
 # About
 
-This project is an E-commerce app, built with React 18, Redux, Redux Toolkit, Redux Thunk, Redux Saga, Hooks, React Router, Context API, Styled components, TypeScript, GraphQL, Firebase, Apollo, Stripe.
+This project is an E-commerce app, built with React 18, Redux, Redux Toolkit, Redux Thunk, Redux Saga, Hooks, React Router, Context API, Styled components, TypeScript, GraphQL, Firebase, Stripe.
 
 # Getting Started with Create React App
 
