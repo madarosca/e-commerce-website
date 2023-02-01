@@ -7,30 +7,32 @@ import createSagaMiddleware from 'redux-saga';
 import { rootSaga } from './root-saga';
 import { rootReducer } from './root-reducer';
 
-export type RootState = ReturnType<typeof rootReducer>
+export type RootState = ReturnType<typeof rootReducer>;
 
 type ExtendedPersistConfig = PersistConfig<RootState> & {
-    whitelist: (keyof RootState)[]
-}
+	whitelist: (keyof RootState)[];
+};
 
 const persistConfig: ExtendedPersistConfig = {
-    key: 'root',
-    storage,
-    whitelist: ['cart'],
+	key: 'root',
+	storage,
+	whitelist: ['cart'],
 };
 
 const sagaMiddleware = createSagaMiddleware();
 
-const middleWares = [process.env.NODE_ENV !== 'production' && logger, sagaMiddleware /*, thunk*/].filter((middleware): middleware is Middleware => Boolean(middleware));
+const middleWares = [/*process.env.NODE_ENV !== 'production' && logger,*/ sagaMiddleware /*, thunk*/]/*.filter(
+	(middleware): middleware is Middleware => Boolean(middleware)
+);*/
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 // use RTK
 export const store = configureStore({
-    reducer: persistedReducer,
-    middleware: middleWares,
-    // middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
-    devTools: process.env.NODE_ENV !== 'production',
+	reducer: persistedReducer,
+	middleware: middleWares,
+	// middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+	devTools: process.env.NODE_ENV !== 'production',
 });
 
 sagaMiddleware.run(rootSaga);
