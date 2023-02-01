@@ -8,10 +8,11 @@ import Authentication from './routes/authentication/authentication.component';
 import Shop from './routes/shop/shop.component';
 import Checkout from './routes/checkout/checkout.component';
 import { checkUserSession } from './store/user/user.action';
+import Whishlist from './routes/whishlist/whishlist.component';
 
 const App = () => {
-    const dispatch = useDispatch();
-    
+	const dispatch = useDispatch();
+
 	useEffect(() => {
 		dispatch(checkUserSession());
 	});
@@ -29,6 +30,10 @@ const App = () => {
 				<Route
 					path='shop/*'
 					element={<Shop />}
+				/>
+				<Route
+					path='whishlist'
+					element={<Whishlist />}
 				/>
 				<Route
 					path='auth'

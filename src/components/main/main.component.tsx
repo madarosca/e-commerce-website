@@ -1,6 +1,6 @@
 import MainItem from '../main-item/main-item.component';
 import { CategoriesContainer } from './main.styles';
-import { categories } from '../../constants/constants.js';
+import { categories } from '../../constants/constants';
 
 const Main = () => {
 	return (

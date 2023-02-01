@@ -1,7 +1,13 @@
+import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { MainCategory } from '../../store/categories/categories.types';
 import { MainItemContainer, BackgroundImage, Body } from './main-item.styles';
 
-const MainItem = ({ category }) => {
+type MainItemProps = {
+	category: MainCategory;
+};
+
+const MainItem: FC<MainItemProps> = ({ category }) => {
 	const { title, imageUrl, route } = category;
 	const navigate = useNavigate();
 

@@ -1,4 +1,6 @@
-export const categories = [
+import { MainCategory } from '../store/categories/categories.types';
+
+export const categories: MainCategory[] = [
 	{
 		id: 1,
 		title: 'Hats',
