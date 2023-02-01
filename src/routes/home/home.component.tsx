@@ -1,12 +1,13 @@
+import { Fragment } from 'react';
 import { Outlet } from 'react-router-dom';
 import Main from '../../components/main/main.component';
 
 const Home = () => {
 	return (
-		<div>
+		<Fragment>
 			<Main />
 			<Outlet />
-		</div>
+		</Fragment>
 	);
 };
 
