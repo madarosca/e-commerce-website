@@ -25,6 +25,7 @@ const Navigation = () => {
 				</LogoContainer>
 				<NavLinks>
 					<NavLink to='/shop'>SHOP</NavLink>
+					<NavLink to='/whishlist'>WISHLIST</NavLink>
 					{!!currentUser ? (
 						<NavLink
 							to='/'
