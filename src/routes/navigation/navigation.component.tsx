@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, memo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Outlet } from 'react-router-dom';
 
@@ -9,11 +9,13 @@ import { NavigationContainer, LogoContainer, NavLinks, NavLink } from './navigat
 import { selectCurrentUser } from '../../store/user/user.selector';
 import { selectIsCartOpen } from '../../store/cart/cart.selector';
 import { signOutStart } from '../../store/user/user.action';
+import { selectWhishlistCount } from '../../store/whishlist/whishlist.selector';
 
-const Navigation = () => {
+const Navigation = memo(() => {
 	const dispatch = useDispatch();
 	const currentUser = useSelector(selectCurrentUser);
 	const isCartOpen = useSelector(selectIsCartOpen);
+	const totalWhishlistItems = useSelector(selectWhishlistCount);
 
 	const onSignOutClick = () => dispatch(signOutStart());
 
@@ -24,8 +26,13 @@ const Navigation = () => {
 					<ShopLogo className='logo' />
 				</LogoContainer>
 				<NavLinks>
-					<NavLink to='/shop'>SHOP</NavLink>
-					<NavLink to='/whishlist'>WISHLIST</NavLink>
+					<NavLink to='/shop' className='pe-3'>SHOP</NavLink>
+					<NavLink to='/whishlist'>
+						WISHLIST{' '}
+						<span className='badge bg-secondary ms-2 rounded-pill translate-middle'>
+							{totalWhishlistItems}
+						</span>
+					</NavLink>
 					{!!currentUser ? (
 						<NavLink
 							to='/'
@@ -43,6 +50,6 @@ const Navigation = () => {
 			<Outlet />
 		</Fragment>
 	);
-};
+});
 
 export default Navigation;

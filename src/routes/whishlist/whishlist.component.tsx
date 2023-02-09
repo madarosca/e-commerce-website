@@ -1,22 +1,31 @@
+import { Fragment } from 'react';
 import { useSelector } from 'react-redux';
-import { selectCartItems } from '../../store/cart/cart.selector';
-import { WhishlistContainer, WhishlistEmpty } from './whishlist.styles';
+import WhishlistItem from '../../components/whishlist-item/whishlist-item.component';
+import { selectWhishlistItems, selectWhishlistCount } from '../../store/whishlist/whishlist.selector';
+import { WhishlistContainer, WhishlistItemContainer, WhishlistEmpty, Title } from './whishlist.styles';
 
 const Whishlist = () => {
-	const cartItems = useSelector(selectCartItems);
+	const whishlistItems = useSelector(selectWhishlistItems);
+	const totalWhishlistItems = useSelector(selectWhishlistCount);
 
 	return (
 		<WhishlistContainer>
-			{!cartItems.length ? (
-				<WhishlistEmpty>Your shopping cart is empty!</WhishlistEmpty>
+			{!whishlistItems.length ? (
+				<WhishlistEmpty>Your whishlist is empty!</WhishlistEmpty>
 			) : (
-				<div>Favourites</div>
-				// cartItems.map((cartItem) => (
-				// 	<WhishlistItem
-				// 		key={cartItem.id}
-				// 		cartItem={cartItem}
-				// 	/>
-				// ))
+				<Fragment>
+					<h2>
+						<Title>Favourite products ({totalWhishlistItems})</Title>
+					</h2>
+					<WhishlistItemContainer>
+						{whishlistItems.map((whishlistItem) => (
+							<WhishlistItem
+								key={whishlistItem.id}
+								whishlistItem={whishlistItem}
+							/>
+						))}
+					</WhishlistItemContainer>
+				</Fragment>
 			)}
 		</WhishlistContainer>
 	);
