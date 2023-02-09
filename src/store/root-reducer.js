@@ -3,6 +3,7 @@ import { categoriesReducer } from './categories/categories.reducer';
 import { userReducer } from './user/user.reducer';
 import { cartReducer } from './cart/cart.reducer';
 import { combineReducers } from 'redux';
+import { whishlistReducer } from './whishlist/whishlist.reducer';
 
 // use RTK
 export const rootReducer = combineReducers({
@@ -10,4 +11,5 @@ export const rootReducer = combineReducers({
 	mainCategories: mainCategoriesReducer,
 	categories: categoriesReducer,
 	cart: cartReducer,
+	whishlist: whishlistReducer,
 });

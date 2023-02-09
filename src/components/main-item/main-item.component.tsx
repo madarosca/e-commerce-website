@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { MainCategory } from '../../store/categories/categories.types';
+import { MainCategory } from '../../store/main-categories/mainCategories.types';
 import { MainItemContainer, BackgroundImage, Body } from './main-item.styles';
 
 type MainItemProps = {

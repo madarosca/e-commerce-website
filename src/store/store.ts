@@ -1,7 +1,7 @@
 import { configureStore, Middleware } from '@reduxjs/toolkit';
 import { persistStore, persistReducer, PersistConfig } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import logger from 'redux-logger';
+// import logger from 'redux-logger';
 // import thunk from 'redux-thunk';
 import createSagaMiddleware from 'redux-saga';
 import { rootSaga } from './root-saga';
@@ -16,7 +16,7 @@ type ExtendedPersistConfig = PersistConfig<RootState> & {
 const persistConfig: ExtendedPersistConfig = {
 	key: 'root',
 	storage,
-	whitelist: ['cart'],
+	whitelist: ['cart', 'whishlist'],
 };
 
 const sagaMiddleware = createSagaMiddleware();

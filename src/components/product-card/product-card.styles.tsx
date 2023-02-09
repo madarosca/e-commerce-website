@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import { BsEmojiHeartEyes, BsEmojiHeartEyesFill } from 'react-icons/bs';
+import styled, { css } from 'styled-components';
 import { BaseButton, GoogleSignInButton, InvertedButton } from '../button/button.styles';
 
 export const Image = styled.img`
@@ -6,6 +7,39 @@ export const Image = styled.img`
 	height: 95%;
 	object-fit: cover;
 	padding-bottom: 5px;
+`;
+
+const whishlistIconStyles = css`
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	z-index: 1;
+	color: #d01717;
+	border-radius: 30px;
+	box-shadow: 0px 0px 7px 3px #2d2e2f1a;
+
+	&:hover {
+		cursor: pointer;
+		opacity: 0.5;
+	}
+`;
+
+export const WhishlistIconFull = styled(BsEmojiHeartEyesFill)`
+	${whishlistIconStyles}
+`;
+
+export const WhishlistIconEmpty = styled(BsEmojiHeartEyes)`
+	${whishlistIconStyles}
+`;
+
+type WhishlistIconProps = {
+	isInWishlist?: boolean;
+};
+
+export const WhishlistIcon = styled.div<WhishlistIconProps>`
+	${({ isInWishlist }) => (isInWishlist ? WhishlistIconFull : WhishlistIconEmpty)}
 `;
 
 export const ProductCardContainer = styled.div`

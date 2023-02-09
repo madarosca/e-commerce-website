@@ -21,7 +21,8 @@ import {
 	getDocs,
 	QueryDocumentSnapshot,
 } from 'firebase/firestore';
-import { Category, MainCategory } from '../../store/categories/categories.types';
+import { Category } from '../../store/categories/categories.types';
+import { MainCategory } from '../../store/main-categories/mainCategories.types';
 
 const firebaseConfig = {
 	apiKey: process.env.REACT_APP_FIREBASE_API_KEY,

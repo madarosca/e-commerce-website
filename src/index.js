@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import reportWebVitals from './reportWebVitals';
 import { PersistGate } from 'redux-persist/integration/react';
 import { Elements } from '@stripe/react-stripe-js';
+import 'bootstrap/dist/css/bootstrap.css';
 
 import App from './App';
 import { store, persistor } from './store/store';
